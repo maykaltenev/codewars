@@ -6,21 +6,26 @@
 // If you like this Kata, maybe try this one next: https://www.codewars.com/kata/represent-array-of-numbers-as-ranges
 // 1 Can you write a solution that will return null2 for both[] and[x] though ? (This is an empty array and one with a single number and is not tested for, but you can write your own example test. )
 
-function firstNonConsecutive(array) {
-    let counter = 0;
-    // if (array.isNaN) {
-    //     return null;
-    // }
-    for (let i = 0; i < array.length; i++) {
-        counter += 1;
-        if (array[i] !== (array[i + 1] - 1)) {
-            return array[i + 1];
-        }
+// function firstNonConsecutive(array) {
+//     let counter = 0;
+//     if (array.isNaN) {
+//         return null;
+//     }
+//     for (let i = 0; i < array.length; i++) {
+//         if (array[i] !== (array[i + 1] - 1)) {
+//             return array[i + 1];
+//         }
+//     }
+//     return null;
+//     // if (counter === array.length) {
+//     //     return null;
+//     // }
+// }
+function firstNonConsecutive(arr) {
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i - 1] + 1 !== arr[i]) return arr[i];
     }
-    console.log(counter)
-    // if (counter === array.length) {
-    //     return null;
-    // }
+    return null;
 }
-console.log(firstNonConsecutive([1, 2, 3, 4, 5, 6, 7, 8]))gi
+console.log(firstNonConsecutive([1, 2, 3, 4, 5, 6, 7, 8]))
 // console.log(firstNonConsecutive([1, 8, 9, 10, 11, 12, 13]))

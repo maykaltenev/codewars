@@ -1,15 +1,13 @@
 function toCamelCase(str) {
     let result = [];
-    if (str.contains('-')) {
+
+    if (str.includes('-')) {
         result = str.split('-');
-    } else if (str.contains('_')) {
+    } else if (str.includes('_')) {
         result = str.split('_');
     }
-    let toUpperCase = [];
-    for (let i = 0; i < result.length; i++) {
-        rel;
-        let spliced = result
-    }
+    let afterResult = result.join('')
+    return afterResult;
 }
 
 

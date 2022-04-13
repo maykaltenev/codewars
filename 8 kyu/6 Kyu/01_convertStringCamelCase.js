@@ -1,9 +1,6 @@
 function toCamelCase(str) {
-    const regExp = /[-_]\w/ig;
-    return str.replace(regExp, (match) => {
-        return match[1].toUppercase()
-    });
+    return str.replace(/[-_](.)/g, (_, c) => c.toUpperCase());
 }
 
 
-console.log(toCamelCase('the_stealth_warrior'))
+console.log(toCamelCase('the-stealth-warrior'))
